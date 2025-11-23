@@ -7,14 +7,14 @@ import matplotlib.animation as animation
 
 # Constant
 hbar = 1.0  # Reduced Planck's constant
-m = 5.0    # Particle mass
+m = 2.0    # Particle mass
 
 
 
 # Time steps
 dt = 0.1
 t_min = 0
-t_max = 40
+t_max = 25
 Nt = int((t_max - t_min) / dt) 
 dx = 0.05
 x_min = -25
@@ -29,7 +29,7 @@ alpha = 0.5  # packet width
 p = hbar * k  # momentum
 V0 = p**2/(2*m)  # Kinetic energy
 x0 = -10  # Initial position
-K = 1  # Spring constant
+K = 0.5  # Spring constant
 
 t = np.linspace(t_min, t_max, Nt + 1)
 x = np.linspace(x_min, x_max, Nx + 1)
@@ -128,7 +128,6 @@ time_text = ax_wave.text(0.02, 0.95,  "", transform=ax_wave.transAxes)
 # Probability heat map
 Prob = ax_heat.imshow([np.abs(Psi[:,0])**2], extent=[x[1], x[-1], -1.5, 1.5], aspect='auto', cmap='hot', alpha=1, vmin=0)
 cbar_prob = fig.colorbar(Prob, ax=ax_heat, label='Probability Density', pad=0.02)
-ax_heat.fill_between(x[1:-1], 0, 1, where=V > 0, color='gray', alpha=0.5, transform=ax_heat.get_xaxis_transform(), label='Potential')
 
 def animate(i):
     line1.set_data(x[1:-1], np.real(Psi[:, i]))

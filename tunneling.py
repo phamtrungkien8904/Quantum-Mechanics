@@ -14,7 +14,7 @@ m = 10.0    # Particle mass
 # Time steps
 dt = 0.1
 t_min = 0
-t_max = 30
+t_max = 25
 Nt = int((t_max - t_min) / dt) 
 dx = 0.05
 x_min = -25
@@ -34,7 +34,7 @@ x = np.linspace(x_min, x_max, Nx + 1)
 
 # Potential function
 V = np.zeros(Nx-1)
-ratio = 1
+ratio = 0.92
 for i in range(Nx-1):
     if x[i]>-1 and x[i]<1:
         V[i] = ratio*KE
