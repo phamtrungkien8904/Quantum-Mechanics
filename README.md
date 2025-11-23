@@ -7,7 +7,7 @@ A small and generalized Python repository that simulates several 1D quantum syst
 ## Included scripts
 
 
-- `infinite-well.py` — particle in an infinite potential well (box). Computes eigenstates and makes an animation of the first few stationary states.
+- `infinite-well.py` — particle in an infinite potential well (box). Computes eigenstates and animation.
 - `tunneling.py` — wavefunction stationary states for a finite barrier with potential $`V_0`$ and an animation showing a wavepacket encountering a barrier.
 - `oscillator.py` — quantum harmonic oscillator eigenstates and animation of a superposition.
 - `free-fall.py` — particle in a linear gravitational-like potential ($`V(x)=m g x`$) and animation.
