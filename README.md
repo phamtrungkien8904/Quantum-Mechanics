@@ -1,10 +1,7 @@
 # Quantum-Mechanics
-A small and generalized Python repository that simulates several 1D quantum system using the finite-difference method (FDM) and linear algebra to compute eigenvalues and eigenvectors of the time-independent Schrödinger equation.
-
-# Quantum-Mechanics
+A small and generalized Python repository that simulates several 1D quantum systems with arbitrary potential distribution and initial wave function using the finite-difference method (FDM) and linear algebra to compute eigenvalues and eigenvectors of the time-independent Schrödinger equation.
 
 
-Simulate 1D quantum systems using the finite-difference method and linear algebra to solve for eigenvalues (energies) and eigenvectors (stationary states).
 
 
 ## Included scripts
