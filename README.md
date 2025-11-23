@@ -26,7 +26,7 @@ To simulate 1D quantum systems numerically, we start from the time-independent S
 -\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} + V(x)\,\psi(x) = E\,\psi(x).
 ```
 
-Space is discretized into evenly spaced points $`x_j`$ with spacing $`\Delta`$. The wavefunction becomes values $`\psi_j = \psi(x_j)`$. The second derivative is approximated using the central finite-difference formula:
+Space is discretized into evenly spaced points $`x_j`$ with spacing $`\Delta x`$. The wavefunction becomes values $`\psi_j = \psi(x_j)`$. The second derivative is approximated using the central finite-difference formula:
 
 ```math
 \frac{d^2\psi}{dx^2} \approx \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2}. 
