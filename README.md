@@ -28,7 +28,7 @@ Simulate 1D quantum systems using the finite-difference method and linear algebr
 To simulate 1D quantum systems numerically, we start from the time‑independent Schrödinger equation:
 
 
-![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20-%5Cfrac%7Bhbar%5E2%7D%7B2m%7D%20%5Cfrac%7Bd%5E2%20psi%7D%7Bdx%5E2%7D%20%2B%20V%28x%29%20psi%20%3D%20E%20psi)
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20-%5Cfrac%7Bhbar%5E2%7D%7B2m%7D%20%5Cfrac%7Bd%5E2%20psi%7D%7Bdx%5E2%7D%20%2B%20V%28x%29%20psi%20%3D%20E%20\psi)
 
 
 We discretize space into evenly spaced points x_j with spacing Δx. The wavefunction becomes values psi_j. The second derivative is approximated using the central finite‑difference formula:
