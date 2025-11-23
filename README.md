@@ -74,4 +74,4 @@ Boundary conditions determine the top and bottom rows. For the infinite square w
 
 The second derivative is approximated with central finite differences on a uniform grid, leading to a symmetric tridiagonal Hamiltonian matrix. We solve for eigenvalues and eigenvectors using `np.linalg.eigh`.
 
-
+After that we can find the general solution of the wave function $Psi(x,t)$. Firstly, we find the expansion coefficient for corresponding eigen wavefunction: c_n = \int psi_n^*(x) \Psi(x,0) dx. Finally, \Psi(x,t) = \sum c_n \psi_n(x) e^{-i E_n t/\hbar}.
