@@ -82,5 +82,5 @@ c_n = \int \psi_n^*(x)\Psi(x,0)dx,
 and then finally reconstruct
 
 ```math
-\Psi(x,t) = \sum_n c_n,\psi_n(x),e^{-iE_n t/\hbar}.
+\Psi(x,t) = \sum_n c_n\psi_n(x)e^{-iE_n t/\hbar}.
 ```
