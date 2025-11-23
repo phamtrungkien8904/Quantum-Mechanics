@@ -70,7 +70,7 @@ The Hamiltonian matrix $`\hat{H}`$ is tridiagonal:
 \end{pmatrix}. 
 ```
 
-Boundary conditions determine the top and bottom rows. For the infinite square well, $`\psi_0 = \psi_{N+1}`$ = 0, so only $`\psi_1 \ldots \psi_N`$ are included. Solving the eigenvalue problem yields numerical approximations of the energy levels $`E_n`$ and stationary states $`\psi_n`$.
+Boundary conditions determine the top and bottom rows. At the window boundaries, $`\psi_0 = \psi_{N+1}`$ = 0, so only $`\psi_1 \ldots \psi_N`$ are included. Solving the eigenvalue problem yields numerical approximations of the energy levels $`E_n`$ and stationary states $`\psi_n`$.
 
 
 The second derivative is approximated with central finite differences on a uniform grid, leading to a symmetric tridiagonal Hamiltonian matrix. We solve for eigenvalues and eigenvectors numerically using numpy built-in function `np.linalg.eigh`.
