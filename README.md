@@ -1,6 +1,9 @@
 # Quantum-Mechanics
 A small and generalized Python repository that simulates several 1D quantum system using the finite-difference method (FDM) and linear algebra to compute eigenvalues and eigenvectors of the time-independent Schrödinger equation.
 
+
+
+
 # Quantum-Mechanics
 
 
@@ -19,102 +22,57 @@ Simulate 1D quantum systems using the finite-difference method and linear algebr
 ## Method
 
 
-### Finite-Difference Derivation (Full Explanation)
+### Finite-Difference Derivation (GitHub‑Friendly Version)
 
 
-To simulate 1D quantum systems numerically, we start from the time-independent Schrödinger equation:
+To simulate 1D quantum systems numerically, we start from the time‑independent Schrödinger equation:
 
 
-\[ -\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} + V(x)\,\psi(x) = E\,\psi(x). \]
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20-%5Cfrac%7Bhbar%5E2%7D%7B2m%7D%20%5Cfrac%7Bd%5E2%20psi%7D%7Bdx%5E2%7D%20%2B%20V%28x%29%20psi%20%3D%20E%20psi)
 
 
-Space is discretized into evenly spaced points x_j with spacing Δx. The wavefunction becomes values ψ_j = ψ(x_j). The second derivative is approximated using the central finite-difference formula:
+We discretize space into evenly spaced points x_j with spacing Δx. The wavefunction becomes values psi_j. The second derivative is approximated using the central finite‑difference formula:
 
 
-\[ \frac{d^2\psi}{dx^2} \approx \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2}. \]
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20%28psi_%7Bj%2B1%7D-2%20psi_j%20%2B%20psi_%7Bj-1%7D%29%20%2F%20%28%28Delta%20x%29%5E2%29)
 
 
-Substituting into the Schrödinger equation yields:
+Substituting into Schrödinger’s equation gives:
 
 
-\[ -\frac{\hbar^2}{2m} \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2} + V_j \psi_j = E \psi_j. \]
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D-%20%28hbar%5E2%2F%282m%29%29%20%28psi_%7Bj%2B1%7D-2%20psi_j%20%2B%20psi_%7Bj-1%7D%29%2F%28Delta%20x%29%5E2%20%2B%20V_j%20psi_j%20%3D%20E%20psi_j)
 
 
-Define:
+Define the constant λ:
 
 
-\[ \lambda = \frac{\hbar^2}{2m(\Delta x)^2}. \]
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20lambda%20%3D%20hbar%5E2%20%2F%20%282m%20%28Delta%20x%29%5E2%29)
 
 
-Then the discrete equation becomes:
+which yields the discrete equation:
 
 
-\[ -\lambda (\psi_{j+1} + \psi_{j-1}) + (2\lambda + V_j)\psi_j = E\psi_j. \]
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20-%20lambda%28psi_%7Bj%2B1%7D%20%2B%20psi_%7Bj-1%7D%29%20%2B%20%282lambda%20%2B%20V_j%29%20psi_j%20%3D%20E%20psi_j)
 
 
-This forms a linear algebra eigenvalue problem:
+Collecting all values psi_j into a vector gives the matrix eigenvalue problem:
 
 
-\[ H \Psi = E \Psi. \]
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20H%20Psi%20%3D%20E%20Psi)
 
 
 The Hamiltonian matrix H is tridiagonal:
 
 
-\[
-H = \begin{pmatrix}
-2\lambda + V_1 & -\lambda & 0 & \cdots \\
--\lambda & 2\lambda + V_2 & -\lambda & \cdots \\
-0 & -\lambda & 2\lambda + V_3 & \cdots \\
-\vdots & \vdots & \vdots & \ddots
-\end{pmatrix}. \]
+![matrix](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20%5Cbegin%7Bpmatrix%7D2lambda%20%2B%20V_1%20%26%20-lambda%20%26%200%20%26%20%5Ccdots%20%5C%5C-lambda%20%26%202lambda%20%2B%20V_2%20%26%20-lambda%20%26%20%5Ccdots%20%5C%5C0%20%26%20-lambda%20%26%202lambda%20%2B%20V_3%20%26%20%5Ccdots%20%5C%5C%5Cvdots%20%26%20%5Cvdots%20%26%20%5Cvdots%20%26%20%5Cddots%5Cend%7Bpmatrix%7D)
 
 
-Boundary conditions determine the top and bottom rows. For the infinite square well, ψ_0 = ψ_{N+1} = 0, so only ψ_1 ... ψ_N are included. Solving the eigenvalue problem yields numerical approximations of the energy levels E_n and stationary states ψ_n.
+Boundary conditions for the infinite square well require:
 
 
-This project uses the standard finite-difference discretization of the time-independent Schr\u00f6dinger equation. Replacing derivatives with central differences converts
+![eq](https://latex.codecogs.com/png.image?%5Cdpi%7B150%7D%20psi_0%20%3D%20psi_%7BN%2B1%7D%20%3D%200)
 
 
-\[ -\frac{\hbar^2}{2m} \frac{d^2\psi}{dx^2} + V(x)\,\psi = E\,\psi \]
-
-
-into the discrete form
-
-
-\[
--\lambda(\psi_{j+1} + \psi_{j-1}) + (2\lambda + V_j)\psi_j = E\psi_j,
-\]
-
-
-where \lambda = \frac{\hbar^2}{2m(\Delta x)^2}. This yields the matrix eigenvalue equation
-
-
-\[ H\Psi = E\Psi \]
-
-
-with a tridiagonal Hamiltonian. Eigenvalues approximate allowed energies; eigenvectors approximate stationary wavefunctions.
-
-
-All scripts use the finite-difference discretization of the 1D time-independent Schrödinger equation
-
-
-\[-\frac{\hbar^2}{2m}\frac{d^2}{dx^2} + V(x)\] \psi(x) = E \psi(x)
-
-
-The second derivative is approximated with central finite differences on a uniform grid, leading to a symmetric tridiagonal Hamiltonian matrix. We solve for eigenvalues and eigenvectors using `scipy.linalg.eigh`.
-
-
-## Requirements
-
-
-Python 3.9+ and the packages listed in `requirements.txt`.
-
-
-## Install
-
-
-```bash
-python -m venv venv
-source venv/bin/activate # or `venv\\Scripts\\activate` on Windows
-pip install -r requirements.txt
+Thus, only psi_1 through psi_N appear in the matrix. Solving the eigenvalue problem yields:
+- energy levels E_n
+- stationary wavefunctions psi_n
