@@ -65,7 +65,8 @@ The Hamiltonian matrix $`H`$ is tridiagonal:
 2\lambda + V_1 & -\lambda & 0 & \cdots \\
 -\lambda & 2\lambda + V_2 & -\lambda & \cdots \\
 0 & -\lambda & 2\lambda + V_3 & \cdots \\
-\vdots & \vdots & \vdots & \ddots
+\vdots & \vdots & \vdots & \ddots\\
+ & & -\lambda & 2\lambda + V_N
 \end{pmatrix}. 
 ```
 
