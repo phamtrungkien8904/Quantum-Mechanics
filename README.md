@@ -57,7 +57,7 @@ This forms a linear algebra eigenvalue problem:
 \hat{H} \psi_n = E_n \psi_n.
 ```
 
-The Hamiltonian matrix $`H`$ is tridiagonal:
+The Hamiltonian matrix $`\hat{H}`$ is tridiagonal:
 
 
 ```math
