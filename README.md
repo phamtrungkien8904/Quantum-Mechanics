@@ -72,6 +72,14 @@ The Hamiltonian matrix $`H`$ is tridiagonal:
 Boundary conditions determine the top and bottom rows. For the infinite square well, $`\psi_0 = \psi_{N+1}`$ = 0, so only $`\psi_1 \ldots \psi_N`$ are included. Solving the eigenvalue problem yields numerical approximations of the energy levels $`E_n`$ and stationary states $`\psi_n`$.
 
 
-The second derivative is approximated with central finite differences on a uniform grid, leading to a symmetric tridiagonal Hamiltonian matrix. We solve for eigenvalues and eigenvectors using `np.linalg.eigh`.
+The second derivative is approximated with central finite differences on a uniform grid, leading to a symmetric tridiagonal Hamiltonian matrix. We solve for eigenvalues and eigenvectors numerically using numpy built-in function `np.linalg.eigh`.
 
-After that we can find the general solution of the wave function $Psi(x,t)$. Firstly, we find the expansion coefficient for corresponding eigen wavefunction: c_n = \int psi_n^*(x) \Psi(x,0) dx. Finally, \Psi(x,t) = \sum c_n \psi_n(x) e^{-i E_n t/\hbar}.
+From there, we construct the full time-dependent wave function. First we compute the projection coefficients for each stationary state,
+```math
+c_n = \int \psi_n^*(x)\Psi(x,0)dx,
+```
+and then finally reconstruct
+
+```math
+\Psi(x,t) = \sum_n c_n,\psi_n(x),e^{-iE_n t/\hbar}.
+```
