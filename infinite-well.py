@@ -69,6 +69,13 @@ def solve():
     for n in range(Nx-1):
         c[n] = np.sum(np.conj(psi[n,:]) * Psi0[:]*dx)  # Expansion coefficients
 
+    # for n in range(Nx -1):
+    #     plt.plot(n, np.abs(c[n]), 'o', label=f'n={n}, |c|={np.abs(c[n]):.3f}')
+    # plt.title('Expansion Coefficients')
+    # plt.xlabel('Eigenstate Index n')
+    # plt.ylabel('Magnitude of Coefficient |c|')
+    # plt.show()
+
     Psi = np.zeros((Nx-1, Nt), dtype=complex)
     for j in range(Nt):
         for n in range(Nx-1):
