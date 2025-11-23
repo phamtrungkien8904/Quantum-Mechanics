@@ -29,9 +29,9 @@ To simulate 1D quantum systems numerically, we start from the time-independent S
 
 Space is discretized into evenly spaced points x_j with spacing Δx. The wavefunction becomes values ψ_j = ψ(x_j). The second derivative is approximated using the central finite-difference formula:
 
-
-\[ \frac{d^2\psi}{dx^2} \approx \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2}. \]
-
+```math
+\frac{d^2\psi}{dx^2} \approx \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2}. \]
+```
 
 Substituting into the Schrödinger equation yields:
 
