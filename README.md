@@ -54,14 +54,14 @@ Then the discrete equation becomes:
 This forms a linear algebra eigenvalue problem:
 
 ```math
-\[ \hat{H} \psi_n = E_n \psi_n.
+\hat{H} \psi_n = E_n \psi_n.
 ```
 
 The Hamiltonian matrix $`H`$ is tridiagonal:
 
 
 ```math
-H = \begin{pmatrix}
+\hat{H} = \begin{pmatrix}
 2\lambda + V_1 & -\lambda & 0 & \cdots \\
 -\lambda & 2\lambda + V_2 & -\lambda & \cdots \\
 0 & -\lambda & 2\lambda + V_3 & \cdots \\
