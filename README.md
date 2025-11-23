@@ -39,7 +39,7 @@ Substituting into the Schrödinger equation yields:
 
 
 ```math
--\frac{\hbar^2}{2m} \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2} + V_j \psi_j = E \psi_j. \]
+-\frac{\hbar^2}{2m} \frac{\psi_{j+1} - 2\psi_j + \psi_{j-1}}{(\Delta x)^2} + V_j \psi_j = E \psi_j. 
 ```
 
 Define:
