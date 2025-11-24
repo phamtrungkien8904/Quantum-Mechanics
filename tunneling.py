@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
+
 # Free quantum wave packet with potential barrier (Tunneling effect)
 
 # Constant
@@ -151,4 +152,6 @@ ani = animation.FuncAnimation(fig, animate, frames=nframes, repeat=False, interv
 plt.show()
 
 
-# ani.save('gifs/tunnel.gif', writer='pillow', fps=30, dpi = 200) # Size  
+# # Save animation
+# plt.rcParams['animation.ffmpeg_path'] = r'C:\Users\lugwi\AppData\Local\Temp\WinGet\Gyan.FFmpeg.8.0.1\extracted\ffmpeg-8.0.1-full_build\bin\ffmpeg.exe'
+# ani.save('gifs/tunnel.mp4', writer='ffmpeg', fps=30, dpi = 200) # Size  
